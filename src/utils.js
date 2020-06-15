@@ -8,10 +8,9 @@ function getRandomCardsArray(cardImagesLength, cardsPerGame){
 
 
 function loadCards(cardsArray){
-    let img = document.createElement('img');
-    img.src = cardsArray[index];
-    let card = document.getElementById('card-image').appendChild(img);
-    card.classList.add("card");
-  }
+  let img = document.createElement('img');
+  img.src = cardsArray[index];
+  let card = document.getElementById('card-image').appendChild(img);
+  card.classList.add("card");
+}
  
-  

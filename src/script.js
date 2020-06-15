@@ -38,8 +38,8 @@ let newArr = [];
 yesButton.addEventListener('click', function(){
   let img = document.getElementById('card-image').getElementsByTagName('img')[0];
   index++;
-  index = index % cardImages.length; // This is for if this is the last card then go to first one
-  img.src = cardImages[index];
+  index = index % cardsArray.length; // This is for if this is the last card then go to first one
+  img.src = cardsArray[index];
   newArr.push('y');
   console.log(newArr);
 });
@@ -47,8 +47,8 @@ yesButton.addEventListener('click', function(){
 noButton.addEventListener('click', function(){
   let img = document.getElementById('card-image').getElementsByTagName('img')[0];
   index++;
-  index = index % cardImages.length; // This is for if this is the last card then go to first one
-  img.src = cardImages[index];
+  index = index % cardsArray.length; // This is for if this is the last card then go to first one
+  img.src = cardsArray[index];
   newArr.push('n');
   console.log(newArr);
 });

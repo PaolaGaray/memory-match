@@ -19,12 +19,16 @@ body {
     font-size: 4em;
 }
 
-
+.game-description {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 50px;
+}
 
 .cards-container {
     display: flex;
     justify-content: space-around;
-    
 }
 .card {
     background-color: #182F45;
