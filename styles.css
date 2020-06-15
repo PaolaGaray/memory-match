@@ -1,0 +1,17 @@
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.card {
+    background-color: #182F45;
+    height: 175px;
+    width: 182px;
+    border:  #182F45 solid 0.5px;
+}
+
+.bottons-container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
