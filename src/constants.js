@@ -7,3 +7,4 @@ const cardImages = ['assets/blueTrapezoid.png',
 
 //Constant use to load the cardImages in loadCards()
 let index = 0;
+

@@ -1,3 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(#3772A5, #1B374F);
+}
+
+.page-title {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 4em;
+}
+
+
+
 .cards-container {
     display: flex;
     justify-content: space-around;
