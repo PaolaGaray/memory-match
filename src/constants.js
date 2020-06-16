@@ -5,6 +5,6 @@ const cardImages = ['assets/blueTrapezoid.png',
                     'assets/redSquare.png',
                     'assets/yellowStar.png'];
 
-//Constant use to load the cardImages in loadCards()
 let index = 0;
 
+let mins = 1;

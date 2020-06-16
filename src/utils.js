@@ -6,6 +6,7 @@ function getRandomCardsArray(cardImagesLength, cardsPerGame){
   return cardsArray;
 }
 
+//-------------------------------------------------------------------
 
 function loadCards(cardsArray){
   let img = document.createElement('img');
@@ -14,3 +15,15 @@ function loadCards(cardsArray){
   card.classList.add("card");
 }
  
+//-------------------------------------------------------------------
+
+function getScore(cardsArray, newArr){
+
+  console.log(newArr);
+
+  for (let i = 0; i < cardsArray.length; i++){
+    for (let j = 0; j < newArr.length; j++){
+         //some code here
+    }
+  }
+}

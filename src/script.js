@@ -1,6 +1,6 @@
-
 let yesButton = document.getElementById("yes-button");
 let noButton = document.getElementById("no-button");
+let testButton = document.getElementById("test-button");
 
 //-------------------------------------------------------------------------------------------
 //Ramdon generation of cards
@@ -38,21 +38,35 @@ let newArr = [];
 yesButton.addEventListener('click', function(){
   let img = document.getElementById('card-image').getElementsByTagName('img')[0];
   index++;
-  index = index % cardsArray.length; // This is for if this is the last card then go to first one
   img.src = cardsArray[index];
   newArr.push('y');
-  console.log(newArr);
+  console.log("yes function", newArr);
 });
 
 noButton.addEventListener('click', function(){
   let img = document.getElementById('card-image').getElementsByTagName('img')[0];
   index++;
-  index = index % cardsArray.length; // This is for if this is the last card then go to first one
   img.src = cardsArray[index];
   newArr.push('n');
-  console.log(newArr);
+  console.log("no function", newArr);
 });
 
-//console.log(newArr);
+testButton.addEventListener('click', function(){
+   //console.log("answers array", newArr);
+});
+
+
+//-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//getScore(cardsArray, newArr);
+
+
+
+
 
 //-------------------------------------------------------------------------------------------

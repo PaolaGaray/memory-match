@@ -13,9 +13,28 @@
 <body>
 
     <h1 class="page-title">Speed Match</h1>
+
+
+    <div class="overlay-text visible">
+        Click to Start
+    </div>
+
+
     <h2 class="game-description">Does the CURRENT card match the card that came IMMEDIATELY BEFORE it?</h2>
     
     <div class="game-container">
+
+        
+        <div class="game-info-container">
+            <div class="game-info">
+                Time: <span id="time-remaining">45</span>
+            </div>
+            <div class="game-info">
+                Score: <span id="score">0</span>
+            </div>
+        </div>
+
+
 
         <div class="cards-container">
             <div class="card"></div>
@@ -25,6 +44,7 @@
         <div class="bottons-container">
             <button id="no-button"> NO <- </button>
             <button id="yes-button"> -> YES </button>
+            <button id="test-button"> TEST </button>
         </div>
 
     </div>
@@ -32,6 +52,6 @@
 </body>
 <script src = "src/constants.js"></script>
 <script src = "src/utils.js"></script>
-<script src = "src/script.js"></script>
+<script src = "src/script.js" async></script>
 
 </html>
