@@ -1,4 +1,4 @@
-const cardsPerGame = 70;
+const cardsPerGame = 72;
 const cardImages = ['assets/blueTrapezoid.png',
                     'assets/greenCircle.png',
                     'assets/purpleTriangle.png',
@@ -6,5 +6,4 @@ const cardImages = ['assets/blueTrapezoid.png',
                     'assets/yellowStar.png'];
 
 let index = 0;
-
-let mins = 1;
+let audio = new Audio('assets/start.wav');

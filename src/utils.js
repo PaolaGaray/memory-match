@@ -17,13 +17,11 @@ function loadCards(cardsArray){
  
 //-------------------------------------------------------------------
 
-function getScore(cardsArray, newArr){
-
-  console.log(newArr);
-
-  for (let i = 0; i < cardsArray.length; i++){
-    for (let j = 0; j < newArr.length; j++){
-         //some code here
-    }
-  }
+function ready(){
+  let clickToStart = document.getElementById('click-to-start');
+  clickToStart.addEventListener('click', () => {
+    clickToStart.classList.remove('visible');
+    audio.loop = true;
+    audio.play();
+  })
 }

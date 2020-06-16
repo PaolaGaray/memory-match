@@ -6,6 +6,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+
+    <script src = "src/constants.js"></script>
+    <script src = "src/utils.js"></script>
+    <script src = "src/script.js" async></script>
+
     <title>Document</title>
 </head>
 
@@ -14,25 +19,39 @@
 
     <h1 class="page-title">Speed Match</h1>
 
-
-    <div class="overlay-text visible">
-        Click to Start
+    <div id= "click-to-start" class="overlay-text visible">
+        Click to Start!
     </div>
+
+
+    <div id="game-over-text" class="overlay-text ">
+        <div class="game-over-text-score">
+            Correct: <span id="matches">  <br></span>
+            Accuracy: <span>    </span>
+        </div>
+    </div>
+
+
 
 
     <h2 class="game-description">Does the CURRENT card match the card that came IMMEDIATELY BEFORE it?</h2>
     
     <div class="game-container">
 
+
+       
         
         <div class="game-info-container">
             <div class="game-info">
-                Time: <span id="time-remaining">45</span>
+                Time: <span id="countdown">45</span><span> s </s></span>
             </div>
-            <div class="game-info">
-                Score: <span id="score">0</span>
-            </div>
+
+           <div class="game-info">
+                Score: <span id="score"> 0 </span>
+            </div> 
+
         </div>
+
 
 
 
@@ -44,14 +63,12 @@
         <div class="bottons-container">
             <button id="no-button"> NO <- </button>
             <button id="yes-button"> -> YES </button>
-            <button id="test-button"> TEST </button>
         </div>
 
     </div>
 
 </body>
-<script src = "src/constants.js"></script>
-<script src = "src/utils.js"></script>
-<script src = "src/script.js" async></script>
+
+
 
 </html>
