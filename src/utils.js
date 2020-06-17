@@ -1,7 +1,7 @@
 function getRandomCardsArray(cardImagesLength, cardsPerGame){
   let cardsArray = [];
-  for(let i=0; i<cardsPerGame; i++){
-      cardsArray.push(Math.floor(Math.random()*(cardImagesLength-1)+1));
+  for(let i=0; i<=cardsPerGame; i++){
+      cardsArray.push(Math.floor(Math.random()*(cardImagesLength)+1));
   }
   return cardsArray;
 }
@@ -22,6 +22,7 @@ function ready(){
   clickToStart.addEventListener('click', () => {
     clickToStart.classList.remove('visible');
     audio.loop = true;
-    audio.play();
+    //audio.play();
   })
 }
+//-------------------------------------------------------------------

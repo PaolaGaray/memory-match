@@ -5,11 +5,9 @@ if(document.readyState === 'loading') {
 } else {
   ready();
 }
-
-//-----------------------------Countdown----------------------------------------------------
+//-------------------------------------countdown-------------------------------------------
 
 let gameOver = document.getElementById('game-over-text');
-
 
 let seconds = document.getElementById("countdown").textContent;
 let countdown = setInterval(function() {
@@ -22,18 +20,12 @@ let countdown = setInterval(function() {
   }
 }, 1000);
 
-//-------------------------------------------------------------------------------------------
 
-let yesButton = document.getElementById("yes-button");
-let noButton = document.getElementById("no-button");
-let testButton = document.getElementById("test-button");
+//------------------------------ramdon generation of cards---------------------------------
 
-
-//Ramdon generation of cards
 let cardsArrayNumbers = getRandomCardsArray(cardImages.length, cardsPerGame);
-//console.log(cardsArrayNumbers);
+console.log(cardsArrayNumbers); //array of cards represented by numbers
 
-let cardsArray = [];
 
 for(let i=0; i<cardsArrayNumbers.length; i++){
   if(cardImages.indexOf('assets/blueTrapezoid.png') === cardsArrayNumbers[i]){
@@ -48,19 +40,29 @@ for(let i=0; i<cardsArrayNumbers.length; i++){
     cardsArray.push('assets/yellowStar.png');
   }
 }
+//console.log(cardsArray); //array of cards represented by images
 
-
-//-------------------------------------------------------------------------------------------
+//-----------------------------loading cards in the interface---------------------------------
 
 loadCards(cardsArray);
 
-//-------------------------------------------------------------------------------------------
-//Buttons functionality and store clicks
+//------------------------------generation of correct answers array---------------------------
+
+for(let i=0; i<cardsArrayNumbers.length-1; i++){
+    if(cardsArrayNumbers[i] === cardsArrayNumbers[i+1]) {
+      answers.push('y');
+    } else {answers.push('n');}
+}
+console.log(answers);
+
+//--------------------------check the player's answers and validate matches------------------
+
+let yesButton = document.getElementById("yes-button");
+let noButton = document.getElementById("no-button");
 
 let newArr = [];
 
-let rigthAnswers = ['y', 'n', 'n', 'y', 'y', 'y', 'y', 'n', 'y','y'];
-let matchCounter = 0;
+let matchCounter = -1;
 let score = 0;
 
 yesButton.addEventListener('click', function(){
@@ -69,7 +71,7 @@ yesButton.addEventListener('click', function(){
   img.src = cardsArray[index];
   newArr.push('y');
   console.log("yes function", newArr);
-  if(rigthAnswers[index-1] === newArr[index-1]){
+  if(answers[index-1] === newArr[index-1]){
     matchCounter++;
     document.getElementById("matches").textContent = matchCounter;
     score = score + 50;  
@@ -87,7 +89,7 @@ noButton.addEventListener('click', function(){
   img.src = cardsArray[index];
   newArr.push('n');
   console.log("no function", newArr);
-  if(rigthAnswers[index-1] === newArr[index-1]){
+  if(answers[index-1] === newArr[index-1]){
     matchCounter++;
     document.getElementById("matches").textContent = matchCounter;
     score = score + 50; 
@@ -98,4 +100,4 @@ noButton.addEventListener('click', function(){
   //return matchCounter;
 });
 
-//-------------------------------------------------------------------------------------------
+//--------------------------------------------
