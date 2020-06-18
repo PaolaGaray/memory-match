@@ -69,6 +69,14 @@ yesButton.addEventListener('click', function(){
   img.src = cardsArray[index];
   newArr.push('y');
   console.log("yes function", newArr);
+
+  //let flashit1 = document.getElementById("card-image");
+  //flashit1.classList.add("flashit");
+
+  //let flashit2 = document.getElementById("empty-card");
+  //flashit2.classList.add("flashit");
+
+
   if(answers[index-1] === newArr[index-1]){
     cardsPlayed++;
     document.getElementById("cards-played").textContent = cardsPlayed;
@@ -102,6 +110,7 @@ yesButton.addEventListener('click', function(){
   document.getElementById("accuracy").textContent = accuracy;
   console.log(matchCounter);
   console.log(cardsPlayed);
+  //flashit1.classList.remove("flashit");
 
 });
 

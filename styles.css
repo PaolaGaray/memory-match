@@ -11,6 +11,13 @@ body {
     background: radial-gradient(#3772A5, #1B374F);
 }
 
+h5 {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
 .page-title {
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
@@ -51,8 +58,6 @@ body {
     }
 }
 
-
-
 .game-description {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
@@ -89,6 +94,18 @@ body {
     height: 175px;
     width: 182px;
     border:  #182F45 solid 0.5px;
+}
+
+
+.flashit {
+    animation: flash linear 1s infinite;
+}
+
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: .1; }
+    100% { opacity: 1; }
 }
 
 .checks-container{
