@@ -1,10 +1,5 @@
 
-//------------------------------validate if the game was loaded-----------------------------
-if(document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', ready());
-} else {
-  ready();
-}
+ready();
 //-------------------------------------countdown-------------------------------------------
 
 let gameOver = document.getElementById('game-over-text');
@@ -16,7 +11,7 @@ let countdown = setInterval(function() {
     if (seconds <= 0){
     clearInterval(countdown);
     gameOver.classList.add('visible');
-    audio.pause();
+    gameOverAudio.play();
   }
 }, 1000);
 
@@ -26,20 +21,21 @@ let countdown = setInterval(function() {
 let cardsArrayNumbers = getRandomCardsArray(cardImages.length, cardsPerGame);
 console.log(cardsArrayNumbers); //array of cards represented by numbers
 
-
 for(let i=0; i<cardsArrayNumbers.length; i++){
-  if(cardImages.indexOf('assets/blueTrapezoid.png') === cardsArrayNumbers[i]){
-    cardsArray.push('assets/blueTrapezoid.png');
-  } else if(cardImages.indexOf('assets/greenCircle.png') === cardsArrayNumbers[i]){
-    cardsArray.push('assets/greenCircle.png');
-  } else if(cardImages.indexOf('assets/purpleTriangle.png') === cardsArrayNumbers[i]){
-    cardsArray.push('assets/purpleTriangle.png');
-  } else if(cardImages.indexOf('assets/redSquare.png') === cardsArrayNumbers[i]){
-    cardsArray.push('assets/redSquare.png');
-  } else if (cardImages.indexOf('assets/yellowStar.png') === cardsArrayNumbers[i]){
-    cardsArray.push('assets/yellowStar.png');
-  }
+
+    if(cardsArrayNumbers[i] === 1){
+      cardsArray.push('assets/blueTrapezoid.png');
+    } else if(cardsArrayNumbers[i] === 2){
+      cardsArray.push('assets/greenCircle.png');
+    } else if(cardsArrayNumbers[i] === 3){
+      cardsArray.push('assets/purpleTriangle.png');
+    } else if(cardsArrayNumbers[i] === 4){
+      cardsArray.push('assets/redSquare.png');
+    } else if (cardsArrayNumbers[i] === 5){
+      cardsArray.push('assets/yellowStar.png');
+    }
 }
+
 //console.log(cardsArray); //array of cards represented by images
 
 //-----------------------------loading cards in the interface---------------------------------
@@ -60,10 +56,12 @@ console.log(answers);
 let yesButton = document.getElementById("yes-button");
 let noButton = document.getElementById("no-button");
 
-let newArr = [];
 
+let newArr = [];
 let matchCounter = -1;
 let score = 0;
+let cardsPlayed = 0;
+let accuracy = 0;
 
 yesButton.addEventListener('click', function(){
   let img = document.getElementById('card-image').getElementsByTagName('img')[0];
@@ -72,15 +70,41 @@ yesButton.addEventListener('click', function(){
   newArr.push('y');
   console.log("yes function", newArr);
   if(answers[index-1] === newArr[index-1]){
+    cardsPlayed++;
+    document.getElementById("cards-played").textContent = cardsPlayed;
     matchCounter++;
     document.getElementById("matches").textContent = matchCounter;
-    score = score + 50;  
+    score = score + 50;
+    document.getElementById("final-score").textContent = score;   
     document.getElementById("score").textContent = score;
-    };
-  console.log(matchCounter);
+    
+    let check2 = document.getElementById('check-tick')
+    check2.style.visibility = 'visible';
 
-  //return matchCounter;
+    let cross2 = document.getElementById('check-cross');
+    cross2.style.visibility = 'hidden';
+
+
+    successAudio.play();
+    } else{
+      cardsPlayed++;
+      document.getElementById("cards-played").textContent = cardsPlayed;
+      let cross = document.getElementById('check-cross');
+      cross.style.visibility = 'visible';
+
+      let check = document.getElementById('check-tick');
+      check.style.visibility = 'hidden';
+
+      errorAudio.play();
+    };
+  
+  accuracy = Math.floor((matchCounter/cardsPlayed)*100);
+  document.getElementById("accuracy").textContent = accuracy;
+  console.log(matchCounter);
+  console.log(cardsPlayed);
+
 });
+
 
 
 noButton.addEventListener('click', function(){
@@ -90,14 +114,40 @@ noButton.addEventListener('click', function(){
   newArr.push('n');
   console.log("no function", newArr);
   if(answers[index-1] === newArr[index-1]){
+    cardsPlayed++;
+    document.getElementById("cards-played").textContent = cardsPlayed;
     matchCounter++;
     document.getElementById("matches").textContent = matchCounter;
-    score = score + 50; 
+    score = score + 50;
+    document.getElementById("final-score").textContent = score; 
+
     document.getElementById("score").textContent = score; 
+    successAudio.play();
+
+    let check = document.getElementById('check-tick')
+    check.style.visibility = 'visible';
+
+    let cross1 = document.getElementById('check-cross');
+    cross1.style.visibility = 'hidden';
+
+    } else{
+    cardsPlayed++;
+    document.getElementById("cards-played").textContent = cardsPlayed;
+    let cross = document.getElementById('check-cross');
+    cross.style.visibility = 'visible';
+
+    let check2 = document.getElementById('check-tick');
+    check2.style.visibility = 'hidden';
+
+    errorAudio.play();
+
     };
+
+  accuracy = Math.floor((matchCounter/cardsPlayed)*100);
+  document.getElementById("accuracy").textContent = accuracy;
   console.log(matchCounter);
-  
-  //return matchCounter;
+  console.log(cardsPlayed);
 });
 
-//--------------------------------------------
+
+//----------------------------------------------------------------------

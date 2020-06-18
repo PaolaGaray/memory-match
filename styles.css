@@ -64,6 +64,7 @@ body {
 .game-info-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
 
@@ -76,16 +77,38 @@ body {
     padding: 8px 50px;
 }
 
+
+
 .cards-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
+
 .card {
     background-color: #182F45;
     height: 175px;
     width: 182px;
     border:  #182F45 solid 0.5px;
 }
+
+.checks-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#check-tick {
+    height: 100px;
+    width: 100px;
+    visibility: visible;
+}
+
+#check-cross {
+    height: 50px;
+    width: 50px;
+    visibility: hidden;
+}
+
 
 .bottons-container {
     margin: 30px;

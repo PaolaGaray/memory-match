@@ -11,7 +11,7 @@
     <script src = "src/utils.js"></script>
     <script src = "src/script.js" async></script>
 
-    <title>Document</title>
+    <title>Speed Match</title>
 </head>
 
 
@@ -19,18 +19,18 @@
 
     <h1 class="page-title">Speed Match</h1>
 
-    <div id= "click-to-start" class="overlay-text">
+    <div id= "click-to-start" class="overlay-text visible">
         Click to Start!
     </div>
 
 
-    <div id="game-over-text" class="overlay-text">
-        <div class="game-over-text-score">
-            Correct: <span id="matches">  <br></span>
-            Accuracy: <span>    </span>
+    <div id="game-over-text" class="overlay-text game-over-text">
+        <div class="game-over-text-score" style="font-size: 0.7em;">
+            <h3>Score: <span id="final-score">       </span> points<br></h3>
+            Correct: <span id="matches">      </span> of <span id="cards-played"> </span><br>
+            Accuracy: <span id="accuracy">  </span>%
         </div>
     </div>
-
 
 
 
@@ -38,34 +38,39 @@
     
     <div class="game-container">
 
-
-       
         
         <div class="game-info-container">
             <div class="game-info">
-                Time: <span id="countdown">50</span><span> s </s></span>
+                TIME: 0:<span id="countdown">45</span><span></s></span>
             </div>
 
            <div class="game-info">
-                Score: <span id="score"> 0 </span>
+                SCORE: <span id="score"> 0 </span>
             </div> 
 
         </div>
 
 
-
-
         <div class="cards-container">
             <div class="card"></div>
+            <div class="checks-container">
+                <img src="assets/tick.png" id="check-tick">
+                <img src="assets/cross.png" id="check-cross">
+            </div>
             <div id="card-image"  class="card"></div>
         </div>
+
+
 
         <div class="bottons-container">
             <button id="no-button"> NO <- </button>
             <button id="yes-button"> -> YES </button>
         </div>
 
+
     </div>
+
+
 
 </body>
 </html>
