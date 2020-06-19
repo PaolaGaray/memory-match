@@ -1,4 +1,4 @@
-const cardsPerGame = 73;
+const cardsPerGame = 200;
 const cardImages = ['assets/blueTrapezoid.png',
                     'assets/greenCircle.png',
                     'assets/purpleTriangle.png',

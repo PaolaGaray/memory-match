@@ -70,7 +70,7 @@ yesButton.addEventListener('click', function(){
   newArr.push('y');
   console.log("yes function", newArr);
 
-/*
+
   let flashit1 = document.getElementById("card-image");
   if(flashit1.classList.contains("flashit")){
     flashit1.classList.remove("flashit");
@@ -78,6 +78,7 @@ yesButton.addEventListener('click', function(){
     flashit1.classList.add("flashit");
   }
 
+  
 
   let flashit2 = document.getElementById("empty-card");
   if(flashit2.classList.contains("flashit")){
@@ -85,7 +86,7 @@ yesButton.addEventListener('click', function(){
   } else {
     flashit2.classList.add("flashit");
   }
-*/
+
 
 
   if(answers[index-1] === newArr[index-1]){
@@ -135,7 +136,7 @@ noButton.addEventListener('click', function(){
   console.log("no function", newArr);
 
 
-/*
+
     let flashit1 = document.getElementById("card-image");
     if(flashit1.classList.contains("flashit")){
       flashit1.classList.remove("flashit");
@@ -150,7 +151,7 @@ noButton.addEventListener('click', function(){
     } else {
       flashit2.classList.add("flashit");
     }
-*/
+
 
 
   if(answers[index-1] === newArr[index-1]){
